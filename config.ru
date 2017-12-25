@@ -1,17 +1,17 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
-require 'dotenv'
+require "dotenv"
 Dotenv.load
 
-require 'nasa'
-require 'web'
+require "nasa"
+require "web"
 
 Thread.abort_on_exception = true
 
 Thread.new do
   begin
     Nasa::Bot.run
-  rescue Exception => e
+  rescue Exceiption => e
     STDERR.puts "ERROR: #{e}"
     STDERR.puts e.backtrace
     raise e
