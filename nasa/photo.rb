@@ -1,9 +1,11 @@
+require "byebug"
+
 module Nasa
   module Commands
     class Photo < SlackRubyBot::Commands::Base
-      command "fetch" do |client, data, match|
+      command "please show photo" do |client, data, match|
         client.say(:channel => data.channel,
-                   :text => "4")
+                   :text => "")
       end
     end
   end
