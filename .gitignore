@@ -3,3 +3,4 @@ vendor/bundle
 *.swp
 .ruby-version
 .env
+.byebug_history

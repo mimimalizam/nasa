@@ -9,6 +9,7 @@ gem 'celluloid-io'
 group :development, :test do
   gem 'rake'
   gem 'foreman'
+  gem "byebug"
 end
 
 group :test do
