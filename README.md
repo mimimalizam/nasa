@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/projects/3e0d49e4-8e5e-48d4-9a1f-9308bd19b3cf/1695126/badge.svg)](https://semaphoreci.com/mstojadinov/nasa)
+
 ## Simple Slack Bot - NASA
 
 It uses NASA's most API [APOD].
