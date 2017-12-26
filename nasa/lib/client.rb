@@ -22,7 +22,7 @@ module Nasa
 
     def response
       connection.get do |request|
-        request.params["date"] = "2017-12-01"
+        request.params["date"] = Time.now.to_s.slice(0..9)
       end
     end
 

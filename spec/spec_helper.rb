@@ -12,3 +12,4 @@ end
 
 require "slack-ruby-bot/rspec"
 require "nasa"
+require "timecop"

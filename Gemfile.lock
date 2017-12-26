@@ -92,6 +92,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timecop (0.9.1)
     timers (4.1.2)
       hitimes
     tzinfo (1.2.4)
@@ -120,6 +121,7 @@ DEPENDENCIES
   rspec
   sinatra
   slack-ruby-bot
+  timecop
   vcr
   webmock
 

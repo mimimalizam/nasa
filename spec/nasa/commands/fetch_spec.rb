@@ -1,6 +1,14 @@
 require "spec_helper"
 
 describe Nasa::Commands::Photo do
+  before do
+    Timecop.freeze(Time.new(2017, 12, 01, 17))
+  end
+
+  after do
+    Timecop.return
+  end
+
   def app
     Nasa::Bot.instance
   end
