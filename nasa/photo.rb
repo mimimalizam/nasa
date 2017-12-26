@@ -1,10 +1,12 @@
 module Nasa
   module Commands
     class Photo < SlackRubyBot::Commands::Base
-      command "fetch" do |client, data, match|
+
+      command "please show photo" do |client, data, match|
         client.say(:channel => data.channel,
-                   :text => "4")
+                   :text => Nasa::Client.new.fetch_data["url"])
       end
+
     end
   end
 end

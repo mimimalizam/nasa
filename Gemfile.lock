@@ -59,6 +59,7 @@ GEM
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rake (12.3.0)
+    require_all (1.4.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -91,6 +92,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timecop (0.9.1)
     timers (4.1.2)
       hitimes
     tzinfo (1.2.4)
@@ -115,9 +117,11 @@ DEPENDENCIES
   puma
   rack-test
   rake
+  require_all
   rspec
   sinatra
   slack-ruby-bot
+  timecop
   vcr
   webmock
 
