@@ -1,3 +1,4 @@
 require "slack-ruby-bot"
-require "nasa/photo.rb"
-require "nasa/bot"
+require "require_all"
+
+require_all "nasa"
