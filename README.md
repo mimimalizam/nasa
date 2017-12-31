@@ -14,7 +14,7 @@ While making it I've used Slack's tutorial for [making bots with Ruby](https://g
 
 ToDo
 
-```
+```bash
 foreman start
 ```
 
@@ -45,10 +45,20 @@ https://nasa-apod-bot.herokuapp.com/
 If we set up [Semaphore server] for the master branch,
 our application will automatically be deployed to Heroku after every green build on master.
 Additionally, we can enabled Semaphore's [Scheduled Builds] for this branch.
-This should wake up Heroku's dyno with automatic redeploys.
-:) and our bot will be active.
+
+### Wake up Heroku Dyno
+
+[Heroku Dyno] is a lightweight container. When your app is using Heroku free tier
+it gets very tired Dyno, which goes to sleep after 30 mins of inactivity.
+
+To entertain a Dyno, I use cURL and Semaphore's [Scheduled Builds].
+
+```bash
+if [ "$BRANCH_NAME" = "rise-and-shine-heroku" ]; then curl https://nasa-apod-bot.herokuapp.com/; fi
+```
 
 [APOD]: https://api.nasa.gov/api.html#apod
 [making bots with Ruby]: https//github.com/slack-ruby/slack-ruby-bot/blob/master/TUTORIAL.md
 [Semaphore server]: https://semaphoreci.com/docs/deploying-to-heroku.html
 [Scheduled Builds]: https://semaphoreci.com/docs/scheduling-builds.html
+[Heroku Dyno]: https://www.heroku.com/pricing
