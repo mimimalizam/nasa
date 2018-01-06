@@ -5,6 +5,7 @@ gem "require_all"
 gem "slack-ruby-bot"
 gem "puma"
 gem "sinatra"
+gem "httparty"
 gem "dotenv"
 gem "celluloid-io"
 

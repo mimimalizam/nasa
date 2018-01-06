@@ -17,7 +17,7 @@ describe Nasa::Commands::Photo do
 
   it "returns the URL" do
     VCR.use_cassette("apod/picture") do
-      expect(:message => "#{SlackRubyBot.config.user} please show photo",
+      expect(:message => "#{SlackRubyBot.config.user} please show us a photo",
              :channel => "channel").to respond_with_slack_message("https://apod.nasa.gov/apod/image/1712/NGC7000_PaoloMoroni1024.jpg")
     end
   end
