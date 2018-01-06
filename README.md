@@ -1,7 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/3e0d49e4-8e5e-48d4-9a1f-9308bd19b3cf/1695126/badge.svg)](https://semaphoreci.com/mstojadinov/nasa)
 
-![hello](public/hello-world.png)
-
 ## Simple Slack Bot - NASA
 
 It uses NASA's most API [APOD].
@@ -57,8 +55,42 @@ To entertain a Dyno, I use cURL and Semaphore's [Scheduled Builds].
 if [ "$BRANCH_NAME" = "rise-and-shine-heroku" ]; then curl https://nasa-apod-bot.herokuapp.com/; fi
 ```
 
+### Wake up Dyno with an outgoing webhook in Slack
+
+On the other hand, we can ping our Heroku application by typing a chosen word.
+For example, I've created one [Outgoing WebHook] which listens for triggers in Slack chat messages.
+This way, when a trigger is noticed, Slack will send relevant data to external URL(s) in real-time.
+
+#### Configure webhook
+
+To wake up the application, I've decided to create an [Outgoing WebHook].
+In order to achive that,  I've:
+
+- filled the URL box with the URL of deployed application on Heroku
+`https://nasa-apod-bot.herokuapp.com/houston`
+- specified trigger word `houston`
+
+When `nasa` is inactive on Slack it will ignore every picture request.
+Then I just type `houston` :)
+
+![houston](public/houston.png)
+
+On a side note, this page lets us to customize some webhook's details
+(e.g. `Name`, `Icon`, select `Slack channel(s)`)
+
+#### Verify if request is known
+
+Webhook page from above also shows the `token` which is included in every outgoing playload.
+This lets me to verify that a post request came from my Slack team.
+At the momment, logic for this lives in the `web.rb` file.
+
+```ruby
+return if params[:token] != ENV["SLACK_WEBHOOK_TOKEN"]
+```
+
 [APOD]: https://api.nasa.gov/api.html#apod
 [making bots with Ruby]: https//github.com/slack-ruby/slack-ruby-bot/blob/master/TUTORIAL.md
 [Semaphore server]: https://semaphoreci.com/docs/deploying-to-heroku.html
 [Scheduled Builds]: https://semaphoreci.com/docs/scheduling-builds.html
 [Heroku Dyno]: https://www.heroku.com/pricing
+[Outgoing WebHook]: https://slack.com/services/new/outgoing-webhook
