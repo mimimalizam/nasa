@@ -88,6 +88,14 @@ At the momment, logic for this lives in the `web.rb` file.
 return if params[:token] != ENV["SLACK_WEBHOOK_TOKEN"]
 ```
 
+### Trivia
+
+> Houston, we've had a problem.
+
+Sentence coined by NASA astronaut [Jack Swigert](https://www.jsc.nasa.gov/Bios/htmlbios/swigert-jl.html),
+best known as the command module pilot aboard [Apollo 13](https://history.nasa.gov/SP-350/ch-13-1.html).
+Here is one [awesome project](http://spacelog.org/) if you'd like to read stories about the early space exploration.
+
 [APOD]: https://api.nasa.gov/api.html#apod
 [making bots with Ruby]: https//github.com/slack-ruby/slack-ruby-bot/blob/master/TUTORIAL.md
 [Semaphore server]: https://semaphoreci.com/docs/deploying-to-heroku.html
