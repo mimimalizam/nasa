@@ -10,6 +10,7 @@ module Nasa
     end
 
     post "/houston" do
+      return if params[:token] != ENV["SLACK_WEBHOOK_TOKEN"]
       respond_message(
         "Roger. Nasa will show you photo, just be nice please."
       )
