@@ -1,6 +1,7 @@
 .bundle
 vendor/bundle
 *.swp
+*.swo
 .ruby-version
 .env
 .byebug_history
