@@ -2,7 +2,11 @@
 
 ## Simple Slack Bot - NASA
 
-It uses NASA's most API [APOD].
+It uses NASA API [APOD].
+
+### Commands
+
+![commands](public/commands.png)
 
 ### Development
 
