@@ -10,11 +10,9 @@ It uses NASA API [APOD].
 
 ### Development
 
-While making it I've used Slack's tutorial for [making bots with Ruby](https://github.com/slack-ruby/slack-ruby-bot/blob/master/TUTORIAL.md "Slack-Ruby-Bot Tutorial").
+Bot was created by following Slack's tutorial for [making bots with Ruby](https://github.com/slack-ruby/slack-ruby-bot/blob/master/TUTORIAL.md "Slack-Ruby-Bot Tutorial").
 
 ### Running a bot locally
-
-ToDo
 
 ```bash
 foreman start
@@ -46,24 +44,16 @@ https://nasa-apod-bot.herokuapp.com/
 
 If we set up [Semaphore server] for the master branch,
 our application will automatically be deployed to Heroku after every green build on master.
-Additionally, we can enabled Semaphore's [Scheduled Builds] for this branch.
-
-### Wake up Heroku Dyno
-
-[Heroku Dyno] is a lightweight container. When your app is using Heroku free tier
-it gets very tired Dyno, which goes to sleep after 30 mins of inactivity.
-
-To entertain a Dyno, I use cURL and Semaphore's [Scheduled Builds].
-
-```bash
-if [ "$BRANCH_NAME" = "rise-and-shine-heroku" ]; then curl https://nasa-apod-bot.herokuapp.com/; fi
-```
 
 ### Wake up Dyno with an outgoing webhook in Slack
 
-On the other hand, we can ping our Heroku application by typing a chosen word.
-For example, I've created one [Outgoing WebHook] which listens for triggers in Slack chat messages.
-This way, when a trigger is noticed, Slack will send relevant data to external URL(s) in real-time.
+Every app deployd to Heroku gets few [Heroku Dyno]s, lightweight containers.
+When app is using Heroku free tier it gets very tired Dyno, which goes to sleep after 30 mins of inactivity.
+
+To entertain a Dyno, I'e set up one [Outgoing WebHook] for Slack. Let's call it `Houston`.
+When mentioned, `Houston` pings my Heroku application.
+So, at the moment, `Houston` listens for triggers in Slack chat messages.
+When a trigger word (`Houston`) is noticed, Slack will send relevant data to external URL(s) in real-time.
 
 #### Configure webhook
 
