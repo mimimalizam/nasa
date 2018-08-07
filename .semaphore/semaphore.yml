@@ -20,44 +20,9 @@ blocks:
           - echo "Docker build..."
           - echo "done"
 
-  - name: "Smoke tests"
+  - name: "Clone private repository"
     task:
       jobs:
-      - name: Smoke
+      - name: Clone example repo
         commands:
-          - checkout
-          - echo "make smoke"
-
-  - name: "Unit tests"
-    task:
-      jobs:
-      - name: RSpec
-        commands:
-          - checkout
-          - echo "make rspec"
-
-      - name: Lint code
-        commands:
-          - checkout
-          - echo "make lint"
-
-      - name: Check security
-        commands:
-          - checkout
-          - echo "make security"
-
-  - name: "Integration tests"
-    task:
-      jobs:
-      - name: Cucumber
-        commands:
-          - checkout
-          - echo "make cucumber"
-
-  - name: "Push Image"
-    task:
-      jobs:
-      - name: Push
-        commands:
-          - checkout
-          - echo "make docker.push"
+          - git clone git@github.com:mimimalizam/example-private-repo.git
