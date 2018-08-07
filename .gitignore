@@ -1,3 +1,4 @@
+secret-with-private-ssh-key.yml
 .bundle
 vendor/bundle
 *.swp
