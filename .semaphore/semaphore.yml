@@ -15,6 +15,10 @@ blocks:
       - name: Docker build
         commands:
           - rbenv install -l
+          - rbenv install 2.0.0-preview1
+          - rbenv local 2.0.0-preview1
+          - gem install bundler --no-ri --no-rdoc
+          - ruby -v
           - checkout
           - ls -1
           - echo $APP_ENV
