@@ -34,6 +34,7 @@ blocks:
           - chmod 600 ~/.ssh/id_rsa_example_repo
           - ssh-add ~/.ssh/id_rsa_example_repo
           - git clone git@github.com:mimimalizam/example-private-repo.git
+          - env
 
       secrets:
         - name: ssh-key-example-repo
