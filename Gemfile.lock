@@ -56,7 +56,7 @@ GEM
     nio4r (2.1.0)
     public_suffix (3.0.1)
     puma (3.11.0)
-    rack (2.0.4)
+    rack (2.0.8)
     rack-protection (2.0.1)
       rack
     rack-test (0.8.2)
