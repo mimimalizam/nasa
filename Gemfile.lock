@@ -98,7 +98,7 @@ GEM
     timecop (0.9.1)
     timers (4.1.2)
       hitimes
-    tzinfo (1.2.4)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     vcr (4.0.0)
     webmock (3.1.1)
